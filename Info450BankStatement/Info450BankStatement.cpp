@@ -48,6 +48,8 @@ int main()
 			cin >> checkAmount;
 			checkTotal += checkAmount;
 			break;
+		case 'Q':
+		case 'q':
 		default:
 			cout << "Invalid Entry" << endl;
 		}
