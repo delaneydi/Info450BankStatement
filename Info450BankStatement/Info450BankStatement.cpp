@@ -56,13 +56,13 @@ int main()
 	while (transactionType != 'Q');
 			std::cout << "Transaction Summary: " << endl;
 			std::cout << "--------------------" << endl;
-			std::cout << "    Beginning Balance: " << fixed << right << setprecision(2) << beginningBalance << endl;
-			std::cout << "    Total Deposits: " << fixed << right << setprecision(2) << depositTotal << endl;
-			std::cout << "    Total Checks: " << fixed << right << setprecision(2) << checkTotal << endl;
-			std::cout << "    Total Withdrawals: " << fixed << right << setprecision(2) << withdrawalTotal << endl;
-			std::cout << "    ------------------" << endl;
+			std::cout << setw(30) << "Beginning Balance: " << fixed << setprecision(2) << setw(10) << beginningBalance << endl;
+			std::cout << setw(30) << "Total Deposits: " << fixed << setprecision(2) << setw(10) << depositTotal << endl;
+			std::cout << setw(30) << "Total Checks: " << fixed << setprecision(2) << setw(10) << checkTotal << endl;
+			std::cout << setw(30) << "Total Withdrawals: " << fixed << setprecision(2) << setw(10) << withdrawalTotal << endl;
+			std::cout << setw(30) << "------------------" << endl;
 			endingBalance = (beginningBalance + depositTotal + checkTotal) - withdrawalTotal;
-			std::cout << "    Ending Balance: " << fixed << right << setprecision(2) << endingBalance << endl;
+			std::cout << setw(30) << "Ending Balance: " << fixed << setprecision(2) << setw(10) << endingBalance << endl;
 
 	return 0;
 }
