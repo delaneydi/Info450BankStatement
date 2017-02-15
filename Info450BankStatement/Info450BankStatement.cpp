@@ -17,6 +17,8 @@ int main()
 	float depositTotal = 0.00;
 	float checkAmount;
 	float checkTotal = 0.00;
+	float endingBalance;
+
 	cout << "Please enter account balance: " << endl;
 	cin >> beginningBalance;
 	cout << "Enter transactions: " << endl;
@@ -49,12 +51,17 @@ int main()
 			cout << "Invalid Entry" << endl;
 		}
 	}
-	while (transactionType != 'Q' || 'q');
+
+	while (transactionType != 'Q');
 			cout << "Transaction Summary: " << endl;
 			cout << "-------------------" << endl;
 			cout << "    Beginning Balance: " << beginningBalance << endl;
 			cout << "    Total Deposits: " << depositTotal << endl;
-
+			cout << "    Total Checks: " << checkTotal << endl;
+			cout << "    Total Withdrawals: " << withdrawalTotal << endl;
+			cout << "    ------------------" << endl;
+			endingBalance = (beginningBalance + depositTotal + checkTotal) - withdrawalTotal;
+			cout << "    Ending Balance: " << endingBalance << endl;
 
 	return 0;
 }
