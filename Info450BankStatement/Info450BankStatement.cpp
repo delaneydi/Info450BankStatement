@@ -8,38 +8,53 @@ using namespace std;
 
 int main()
 {
-	float accountValue;
+
+	float beginningBalance;
 	char transactionType;
 	float withdrawalAmount;
+	float withdrawalTotal = 0.00;
 	float depositAmount;
+	float depositTotal = 0.00;
 	float checkAmount;
-	cout << "Please enter account balance" << endl;
-	cin >> accountValue;
-	cout << "Enter transactions:" << endl;
+	float checkTotal = 0.00;
+	cout << "Please enter account balance: " << endl;
+	cin >> beginningBalance;
+	cout << "Enter transactions: " << endl;
 	cout << "------------------" << endl;
-
 	do
 	{
-		cout << "(W)ithdrawal (D)eposit (C)heck (Q)uit" << endl;
+		cout << "(W)ithdrawal, (D)eposit, (C)heck, (Q)uit" << endl;
 		cin >> transactionType;
-
-		for (transactionType == 'W'; transactionType == 'w';)
+		switch (transactionType)
 		{
-			cout << "Enter amount for withdrawal -->" << endl;
+		case 'W':
+		case 'w':
+			cout << "Enter amount for withdrawal --> " << endl;
 			cin >> withdrawalAmount;
-			for (transactionType == 'D'; transactionType == 'd';)
-			{
-				cout << "Enter amount for deposit -->" << endl;
-				cin >> depositAmount;
-				for (transactionType == 'C'; transactionType == 'c';)
-				{
-					cout << "Enter amount for check -->" << endl;
-					cin >> checkAmount; 
-				}
-			}
+			withdrawalTotal += withdrawalAmount;
+			break;
+		case 'D':
+		case 'd':
+			cout << "Enter amount for deposit -->" << endl;
+			cin >> depositAmount;
+			depositTotal += depositAmount;
+			break;
+		case 'C':
+		case 'c':
+			cout << "Enter amount for check -->" << endl;
+			cin >> checkAmount;
+			checkTotal += checkAmount;
+			break;
+		default:
+			cout << "Invalid Entry" << endl;
 		}
+	}
+	while (transactionType != 'Q' || 'q');
+			cout << "Transaction Summary: " << endl;
+			cout << "-------------------" << endl;
+			cout << "    Beginning Balance: " << beginningBalance << endl;
+			cout << "    Total Deposits: " << depositTotal << endl;
 
-	} while (transactionType == 'W' || transactionType == 'w');
 
 	return 0;
 }
