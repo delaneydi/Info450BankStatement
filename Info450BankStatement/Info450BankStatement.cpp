@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 
@@ -53,15 +54,15 @@ int main()
 	}
 
 	while (transactionType != 'Q');
-			cout << "Transaction Summary: " << endl;
-			cout << "-------------------" << endl;
-			cout << "    Beginning Balance: " << beginningBalance << endl;
-			cout << "    Total Deposits: " << depositTotal << endl;
-			cout << "    Total Checks: " << checkTotal << endl;
-			cout << "    Total Withdrawals: " << withdrawalTotal << endl;
-			cout << "    ------------------" << endl;
+			std::cout << "Transaction Summary: " << endl;
+			std::cout << "--------------------" << endl;
+			std::cout << "    Beginning Balance: " << fixed << right << setprecision(2) << beginningBalance << endl;
+			std::cout << "    Total Deposits: " << fixed << right << setprecision(2) << depositTotal << endl;
+			std::cout << "    Total Checks: " << fixed << right << setprecision(2) << checkTotal << endl;
+			std::cout << "    Total Withdrawals: " << fixed << right << setprecision(2) << withdrawalTotal << endl;
+			std::cout << "    ------------------" << endl;
 			endingBalance = (beginningBalance + depositTotal + checkTotal) - withdrawalTotal;
-			cout << "    Ending Balance: " << endingBalance << endl;
+			std::cout << "    Ending Balance: " << fixed << right << setprecision(2) << endingBalance << endl;
 
 	return 0;
 }
