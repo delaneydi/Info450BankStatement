@@ -57,7 +57,7 @@ int main()
 
 	while (transactionType != 'Q' && transactionType != 'q');
 			std::cout << "Transaction Summary: " << endl;
-			std::cout << "--------------------" << endl;
+			std::cout << "--------------------" << endl; 
 			std::cout << setw(30) << "Beginning Balance: " << fixed << setprecision(2) << setw(10) << beginningBalance << endl;
 			std::cout << setw(30) << "Total Deposits: " << fixed << setprecision(2) << setw(10) << depositTotal << endl;
 			std::cout << setw(30) << "Total Checks: " << fixed << setprecision(2) << setw(10) << checkTotal << endl;
